@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: spring-boot-kt-scaffold
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 512MB # 单个文件的最大上限
+      max-request-size: 512MB # 单个请求的文件总大小上限
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB_NAME:spring-boot-kt-scaffold}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:ALLURE_love921}
+
+mybatis:
+  configuration:
+    cache-enabled: false # 关闭二级缓存
+    local-cache-scope: statement # 一级缓存级别设置为statement
